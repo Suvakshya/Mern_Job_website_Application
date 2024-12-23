@@ -114,8 +114,11 @@ export const updateProfile = async (req, res) => {
     const file = req.file;
 
     //cloudinary ayaga idher
+    let skillsArray;
+    if (skills) {
+      skillsArray = skills.split(",");
+    }
 
-    const skillsArray = skills.split(",");
     const userId = req.id; // middleware authentication
     let user = await User.findById(userId);
 

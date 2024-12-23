@@ -4,6 +4,7 @@ const companySchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+      unique: true,
     },
     description: {
       type: String,
@@ -26,4 +27,4 @@ const companySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const Compnay = mongoose.model("Company", jobSchema);
+export const Company = mongoose.model("Company", companySchema);
